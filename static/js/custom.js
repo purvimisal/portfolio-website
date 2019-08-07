@@ -25,7 +25,10 @@
 		}
 	};
 
-
+	/*function ToggleClick() {
+		document.getElementById("navbarsExample09").style.display = "block";
+		
+	}*/ 
 	// navigation
 	var OnePageNav = function() {
 		var navToggler = $('.navbar-toggler');
