@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
-
+myEmail = "" //Email ID where forms must be sent
 @app.route("/")
 def home():
     return render_template("index.html")
@@ -12,14 +12,10 @@ def submitform():
     name = request.form['name']
     tel = request.form['tel']
     msg = request.form['message']
-    fileName = "Forms.txt"
-    file = open(fileName,'a+',encoding="utf-8")
-    file.write("Name:" + name + '\n')
-    file.write("Telephone:" + tel + '\n')
-    file.write("Email:" + email + '\n')
-    file.write("Message:" + msg + '\n')
-    file.write("----------------------------------------" + '\n')
-    file.close()
+    if not email or not name or not msg:
+        return redirect('/')
+    import sendemail
+    sendmail.mainSendMail(myEmail, name, str('Email: ' +email + '\nPhone number: ' + tel + '\nMessage: ' + msg))
     return redirect('/')
 
 if __name__ == "__main__":
