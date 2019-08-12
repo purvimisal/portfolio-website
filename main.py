@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
-myEmail = "" //Email ID where forms must be sent
+myEmail = "purvimisal@gmail.com" #Email ID where forms must be sent
 @app.route("/")
 def home():
     return render_template("index.html")

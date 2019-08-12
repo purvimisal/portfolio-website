@@ -20,8 +20,8 @@ from email.mime.text import MIMEText
 COMMASPACE = ', '
 def mainSendMail(senderUser, HisSubject, hismessage):
     text = hismessage
-    sender = '' //SenderUser email ID
-    gmail_password = '' //Password
+    sender = '' #SenderUser email ID
+    gmail_password = '' #Password
     if senderUser and senderUser !="":
         recipients.append(senderUser)
     else:
