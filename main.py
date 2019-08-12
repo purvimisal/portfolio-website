@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
-myEmail = "purvimisal@gmail.com"
+myEmail = "" //Email ID where forms must be sent
 @app.route("/")
 def home():
     return render_template("index.html")
@@ -14,8 +14,8 @@ def submitform():
     msg = request.form['message']
     if not email or not name or not msg:
         return redirect('/')
-    import sendmailtopurvi
-    sendmailtopurvi.mainSendMail(myEmail, name, str('Email: ' +email + '\nPhone number: ' + tel + '\nMessage: ' + msg))
+    import sendemail
+    sendemail.mainSendMail(myEmail, name, str('Email: ' +email + '\nPhone number: ' + tel + '\nMessage: ' + msg))
     return redirect('/')
 
 if __name__ == "__main__":
